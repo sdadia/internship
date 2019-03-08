@@ -1,0 +1,5 @@
+s3fs==0.2.0
+pandas==0.22.0
+numpy==1.14.0
+SQLAlchemy==1.2.2
+pyarrow
