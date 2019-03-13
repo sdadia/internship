@@ -1,0 +1,1 @@
+jupyter nbconvert "aws kinesis tutorial.ipynb" --to slides --post serve
