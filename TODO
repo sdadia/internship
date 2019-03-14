@@ -1,9 +1,0 @@
-# Imporvemnts
-*# car health, car error (yes or no), car warning(10 different warnings)
-# lambda function with relational database
-# collecting data from different machine - collect from S3 - convert it to varios
-*# - create mysql database + connect to database to AWS - 
-# get data from twitter
-*# get data from s3, cassandra, dynamo DB, postgres, mysql - access data from google analytics
-# keep an eye on GO language
-# draft letter to tableau for extension
