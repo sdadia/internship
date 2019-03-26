@@ -19,11 +19,11 @@ while True:
         "car_id" : random.randint(1,5),
         "warning" : random.randint(0, 10)
     }
-    
+
     # convert it to record
     record['Data'] = json.dumps(data)
     record['PartitionKey'] = str(data['car_id'])
-    
+
     ## send the record
     response = kinesis_client.put_record(**record,StreamName='taxi_fleet_stream')
     pprint(record)
@@ -31,7 +31,7 @@ while True:
     # pprint(response)
     # print("\n====================\n")
     record = {}
-    
+
     ## sleep for 1 second - then send next record
     time.sleep(2)
     # time.send

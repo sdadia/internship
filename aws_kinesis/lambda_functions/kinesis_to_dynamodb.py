@@ -43,3 +43,5 @@ def lambda_handler(event, context):
 
     response = table.put_item(Item=data)
     pprint(response)
+    print("/home/lost+found/)
+
