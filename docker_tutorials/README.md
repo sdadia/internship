@@ -1,6 +1,8 @@
 Docker Image for Data Science
 -----------------------
 
+This Docker sets up a Jupyter Notebook with all the dependencies
+
 Create Docker Image
 ```
 docker build --tag='datascience_image' .
