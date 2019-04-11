@@ -33,7 +33,7 @@ RUN pip install kaggle pytest
 RUN pip install SQLAlchemy psycopg2-binary PyMySQL pymssql
 
 # install cloud stack
-RUN pip install awscli boto3 flintrock
+RUN pip install --upgrade awscli boto3 flintrock
 
 # start jupyter notebook on 8889
 ENTRYPOINT jupyter notebook --port=8889 --ip=0.0.0.0 --allow-root --no-browser
