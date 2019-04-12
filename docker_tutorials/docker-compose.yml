@@ -1,0 +1,17 @@
+version: '3'
+services:
+  juputer_notebook:
+    build:
+      context: ./jupyter_docker
+      dockerfile: Dockerfile
+    image: jupyter_stack
+    container_name: jupyter_notebook
+    ports:
+      - 8889:8889 # local computer 8889 port for jupyter
+    volumes:
+      - /home/:/home/
+    network_mode: host
+    environment: # these variables are passed to the container - same as -e option for docker run
+      AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+      AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+      HOME: $HOME
