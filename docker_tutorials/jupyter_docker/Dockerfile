@@ -1,5 +1,5 @@
-# Run this file as docker build --tag='my_jupyter_dist' .
-# Run the container as docker run -p 8889:8889  my_jupyter_dist
+# Run this file as docker build --tag='jupyter_stack' .
+# Run the container as docker run -p 8889:8889  jupyter_stack
 
 FROM ubuntu:18.04
 
@@ -35,5 +35,12 @@ RUN pip install SQLAlchemy psycopg2-binary PyMySQL pymssql
 # install cloud stack
 RUN pip install --upgrade awscli boto3 flintrock
 
+# Install new jupyter notebook theme : https://github.com/dunovank/jupyter-themes
+#RUN pip install --upgrade jupyterthemes
+#RUN jt -t chesterish -fs 95 -altp -tfs 11 -nfs 115 -cellw 88% -T 
+
+# bash completion
+RUN apt install bash-completion -y
+
 # start jupyter notebook on 8889
-ENTRYPOINT jupyter notebook --port=8889 --ip=0.0.0.0 --allow-root --no-browser
+ENTRYPOINT jupyter notebook --port=8889 --ip=0.0.0.0 --allow-root 
