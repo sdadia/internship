@@ -33,7 +33,7 @@ RUN pip install kaggle pytest
 RUN pip install SQLAlchemy psycopg2-binary PyMySQL pymssql
 
 # install cloud stack
-RUN pip install --upgrade awscli boto3 flintrock
+RUN pip install --upgrade awscli boto3 flintrock s3fs
 
 # Install new jupyter notebook theme : https://github.com/dunovank/jupyter-themes
 #RUN pip install --upgrade jupyterthemes
@@ -41,6 +41,8 @@ RUN pip install --upgrade awscli boto3 flintrock
 
 # bash completion
 RUN apt install bash-completion -y
+
+RUN pip install findspark
 
 # start jupyter notebook on 8889
 ENTRYPOINT jupyter notebook --port=8889 --ip=0.0.0.0 --allow-root 
