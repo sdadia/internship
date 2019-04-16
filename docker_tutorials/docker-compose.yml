@@ -1,19 +1,24 @@
+##
+## Run the container using :
+##   docker-compose up --build
+##
 version: '3'
 services:
   juputer_notebook:
     build:
       context: ./
       dockerfile: Dockerfile
-    image: spark_stack
-    container_name: spark_stack_container
+    image: jupyter_spark_stack
+    container_name: jupyter_spark_stack_container
     ports:
-      - 8889:8889 # local computer 8889 port for jupyter
-      - 8080:8080 # master UI
-      - 7070:7070 # spark master
-      - "4040-4049:4040-4049" # for jobs
+        - 8889:8889 # local computer 8889 port for jupyter
+        - 8080:8080 # master UI
+        - 7070:7070 # spark master
+        - "4040-4049:4040-4049" # for spark 9 jobs
     volumes:
-      - /home/:/home/
+        - $HOME:/home/
     network_mode: host
     environment: # these variables are passed to the container - same as -e option for docker run
       AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
       AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+
